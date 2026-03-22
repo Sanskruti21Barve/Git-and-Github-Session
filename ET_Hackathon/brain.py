@@ -1,8 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+# Load the environment variables
+load_dotenv()
 import requests
 import json
 
 # 1. Configuration (Updated to Gemini 2.5)
-API_KEY = "AIzaSyAMF0DU-byCCrHDeIzzAj6ZpzbdqIZ222k"
+API_KEY = os.getenv("GEMINI_API_KEY")
 # We changed 'gemini-1.5-flash' to 'gemini-2.5-flash' to fix the 404 error
 URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
 
