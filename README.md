@@ -17,4 +17,6 @@ Add your API key: GEMINI_API_KEY=your_key_here.
 
 Run pip install python-dotenv requests.
 
-Run python ET_Hackathon/brain.py.
+If you are outside the folder: This command is correct.
+
+If you are inside the folder: You just run python brain.py.
