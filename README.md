@@ -8,27 +8,27 @@ This project is a high-speed AI agent that automates the generation of HR onboar
  ## 🚀 How to Run 
  
 
-# 1. Install Requirements
+### 1. Install Requirements
 
 
 Bash
 pip install streamlit google-generativeai python-dotenv
 
-# 2. Setup Environment
+### 2. Setup Environment
 
 
 Create a .env file.
 
 Add your API Key: GEMINI_API_KEY=your_key_here
 
-# 3. Run the App
+### 3. Run the App
 
 
 Bash
 
 streamlit run app.py
 
-# 4. Test with Sample Data
+### 4. Test with Sample Data
 
 
 When the app opens, click "Browse files."
