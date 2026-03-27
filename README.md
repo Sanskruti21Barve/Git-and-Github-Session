@@ -1,5 +1,7 @@
 # HR Onboarding Agent (Backend-First)
 
+![image alt](https://github.com/Sanskruti21Barve/Git-and-Github-Session/blob/main/agenticai1.png)
+
 This project is a high-speed AI agent that automates the generation of HR onboarding summaries using the Gemini 2.5 Flash API.
 
 ## 🛠️ Setup Instructions
