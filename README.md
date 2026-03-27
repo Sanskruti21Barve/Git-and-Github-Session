@@ -6,25 +6,33 @@
 This project is a high-speed AI agent that automates the generation of HR onboarding summaries using the Gemini 1.5 Flash API.
 
  ## 🚀 How to Run 
+ 
 
-1. Install Requirements
+# 1. Install Requirements
+
 
 Bash
 pip install streamlit google-generativeai python-dotenv
 
-2. Setup Environment
+# 2. Setup Environment
+
 
 Create a .env file.
+
 Add your API Key: GEMINI_API_KEY=your_key_here
 
-3. Run the App
+# 3. Run the App
+
 
 Bash
+
 streamlit run app.py
 
-4. Test with Sample Data
+# 4. Test with Sample Data
+
 
 When the app opens, click "Browse files."
+
 Select james.png directly from the project folder to see the AI agent in action!
 
 ## 🛠️ Tech Stack
@@ -39,8 +47,13 @@ Select james.png directly from the project folder to see the AI agent in action!
 
 ## 🌟 Key Features :
 
+
 ⚡ AI-Powered Extraction: Automated recognition of employee details from ID cards.
+
 📜 Immutable Audit Log: Real-time logging of every process in a persistent audit_log.txt.
+
 📥 One-Click Export: HR-friendly button to download the entire system history.
+
 🛡️ Security Shield: Implementation of .gitignore and .env to protect sensitive API credentials.
+
 🎉 Positive UX: Interactive celebration effects (Balloons!) upon successful verification.
