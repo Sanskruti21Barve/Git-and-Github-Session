@@ -10,16 +10,17 @@
 
 </div>
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-| :--- | :--- |
-| **Python** | Core Backend Logic |
-| **Streamlit** | Dashboard UI/UX |
-| **Gemini 1.5** | AI Vision Extraction |
-
 ---
 
+## 🛠️ Tech Stack
+
+| Technology | Logo | Purpose |
+| :--- | :--- | :--- |
+| **Python** | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) | Core Backend Logic |
+| **Streamlit** | ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white) | Dashboard UI/UX |
+| **Gemini 1.5** | ![Gemini](https://img.shields.io/badge/Google%20Gemini-8E75C2?style=for-the-badge&logo=google-gemini&logoColor=white) | AI Vision Extraction |
+
+---
 
 # 1️⃣ Install Dependencies
 
