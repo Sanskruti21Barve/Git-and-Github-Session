@@ -2,7 +2,7 @@
 
 # 🤖 AI-HR-Agent (Team ET)
 
-![AI Banner](https://raw.githubusercontent.com/Sanskriti21Barve/AI-HR-Agent-/main/agenticai1.png)
+![AI Banner](agenticai1.png)
 
 **An Agentic AI workflow for autonomous HR onboarding, featuring real-time document extraction and a secure audit trail.**
 
@@ -37,7 +37,7 @@
 ### 1️⃣ Install Dependencies
 Ensure you have Python installed, then run:
 ```bash
-pip install streamlit google-generativeai python-dotenv
+pip install streamlit google-generativeai python-dotenv 
 
 ### 2️⃣ Configure API Key
 Create a file named .env in the root folder and add your Gemini API key:
