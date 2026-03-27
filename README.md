@@ -5,13 +5,14 @@
 
 This project is a high-speed AI agent that automates the generation of HR onboarding summaries using the Gemini 1.5 Flash API.
 
- ## 🚀 How to Run 
+ ## 🚀 How to Run and Setup: 
  
 
 ### 1. Install Requirements
 
 
 Bash
+
 pip install streamlit google-generativeai python-dotenv
 
 ### 2. Setup Environment
