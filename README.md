@@ -1,40 +1,34 @@
-# HR Onboarding Agent (Backend-First)
+<div align="center">
 
-![image alt](https://github.com/Sanskruti21Barve/Git-and-Github-Session/blob/main/agenticai1.png)
-![image alt](https://github.com/Sanskruti21Barve/AI-HR-Agent-/blob/main/agenticai2.png)
+# 🤖 AI-HR-Agent (Team ET)
 
-This project is a high-speed AI agent that automates the generation of HR onboarding summaries using the Gemini 1.5 Flash API.
+**An Agentic AI workflow for autonomous HR onboarding, featuring real-time document extraction and a secure audit trail.**
 
- ## 🚀 How to Run and Setup: 
- 
+[![Python](https://img.shields.io/badge/Python-3.12+-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Gemini AI](https://img.shields.io/badge/Google_Gemini-1.5_Flash-8E75B2?style=for-the-badge&logo=google-gemini&logoColor=white)](https://aistudio.google.com/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-### 1. Install Requirements
+[🚀 Quick Start](#-quick-start-guide) • [🛠️ Tech Stack](#-tech-stack) • [🏆 Key Features](#-key-features) • [📜 Audit Log](#-audit-system)
 
+</div>
 
-Bash
+---
 
-pip install streamlit google-generativeai python-dotenv
+## 🎯 About the Project
 
-### 2. Setup Environment
+**AI-HR-Agent** is a high-speed AI solution designed to bridge the gap between manual document processing and automated HR workflows. Developed by **Team ET**, this tool automates the extraction of employee data from ID cards, ensuring 100% accuracy and providing a persistent audit trail for corporate compliance.
 
+### 🌟 Why AI-HR-Agent?
 
-Create a .env file.
+| Manual Process | AI-HR-Agent |
+|----------------|-------------|
+| ⏳ Takes 3-5 days | ⚡ **Instant (5 seconds)** |
+| 📝 Human error in data entry | 🤖 **AI-driven precision** |
+| 📂 Messy physical files | 📜 **Digital Audit Logs** |
+| 🔒 Security risks | 🛡️ **Encrypted .env security** |
 
-Add your API Key: GEMINI_API_KEY=your_key_here
-
-### 3. Run the App
-
-
-Bash
-
-streamlit run app.py
-
-### 4. Test with Sample Data
-
-
-When the app opens, click "Browse files."
-
-Select james.png directly from the project folder to see the AI agent in action!
+---
 
 ## 🛠️ Tech Stack
 
@@ -42,19 +36,26 @@ Select james.png directly from the project folder to see the AI agent in action!
 | :--- | :--- |
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width="30"> **Python** | Core Logic & Backend |
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/streamlit/streamlit-original.svg" width="30"> **Streamlit** | Interactive UI/UX Dashboard |
-| <img src="https://www.gstatic.com/lamda/images/favicon_v1_15011f02930615bfc441.svg" width="30"> **Google Gemini 1.5 Flash** | AI Document Vision & Extraction |
+| <img src="https://www.gstatic.com/lamda/images/favicon_v1_15011f02930615bfc441.svg" width="30"> **Gemini 1.5 Flash** | AI Document Vision & Extraction |
 | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" width="30"> **Git & GitHub** | Version Control & Security |
 
+---
 
-## 🌟 Key Features :
+## 🌟 Key Features
 
+- **⚡ AI-Powered Extraction**: Automated recognition of Name, Dept, and Role from ID cards.
+- **📜 Immutable Audit Trail**: Real-time logging of every action in `audit_log.txt`.
+- **📥 One-Click Export**: Download the full system history for HR records.
+- **🛡️ Security Shield**: Implementation of `.gitignore` to protect API credentials.
+- **🎉 Interactive UX**: Professional dashboard with success animations (Balloons!).
 
-⚡ AI-Powered Extraction: Automated recognition of employee details from ID cards.
+---
 
-📜 Immutable Audit Log: Real-time logging of every process in a persistent audit_log.txt.
+## 🚀 Quick Start Guide
 
-📥 One-Click Export: HR-friendly button to download the entire system history.
+### ⚡ Get Started in 2 Minutes
 
-🛡️ Security Shield: Implementation of .gitignore and .env to protect sensitive API credentials.
-
-🎉 Positive UX: Interactive celebration effects (Balloons!) upon successful verification.
+1. **Clone & Navigate**
+   ```bash
+   git clone [https://github.com/Sanskriti21Barve/AI-HR-Agent-.git](https://github.com/Sanskriti21Barve/AI-HR-Agent-.git)
+   cd AI-HR-Agent-
