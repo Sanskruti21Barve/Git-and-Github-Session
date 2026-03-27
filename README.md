@@ -39,20 +39,22 @@ Ensure you have Python installed, then run:
 ```bash
 pip install streamlit google-generativeai python-dotenv
 
-2️⃣ Configure API Key
+### 2️⃣ Configure API Key
 Create a file named .env in the root folder and add your Gemini API key:
-
-Code snippet
+```Code snippet
 GEMINI_API_KEY=your_actual_api_key_here
-3️⃣ Run the Application
+
+### 3️⃣ Run the Application
 Start the Team ET dashboard with this command:
 
-Bash
+```Bash
 streamlit run app.py
-4️⃣ Test with Samples
+
+### 4️⃣ Test with Samples
 Upload the provided james.png from the repository to see the AI agent verify a user in real-time.
 
-🌟 Key Features
+###🌟 Key Features:
+
 ⚡ AI Extraction: Instantly pulls Name, Dept, and Role from IDs.
 
 📜 Audit Trail: Every action is logged in audit_log.txt for HR records.
@@ -61,4 +63,16 @@ Upload the provided james.png from the repository to see the AI agent verify a u
 
 🎉 UI Celebrations: Interactive success balloons upon verification.
 
+##🤝 Contributors
+
+Sanskriti21Barve
+
+Jyotirmoypaul97
+
+laxmi467
+
 <div align="center">
+
+Made with ❤️ by Team ET for the 2026 Technical Hackathon
+
+</div>
