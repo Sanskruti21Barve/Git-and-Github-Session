@@ -10,8 +10,6 @@ An Agentic AI workflow designed for autonomous HR onboarding, transforming the p
 🏆 **Hackathon Project** • 🚀 **Instant Processing** • 📜 **Audit Ready**
 </div>
 
-# 🚀 Team ET: AI HR Onboarding Agent
-
 ### 📺 [Watch our 2-Minute Demo Video Here](loom.com/share/147e4c94034247e6a345a897d7f6f08b)
 
 **Impact:** Our agent reduces manual onboarding time by **90%** using Gemini 1.5 Flash.
