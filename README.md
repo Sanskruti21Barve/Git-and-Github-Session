@@ -46,7 +46,7 @@ It allows HR Managers to move from being "Stressed Administrators" to "Strategic
 
 ## ⚙️ Quick Start Guide
 
-1. **Install:** `pip install streamlit google-generativeai python-dotenv`
+1. **Install:** `pip install -r requirements.txt`
 2. **Setup:** Add your API Key to the `.env` file.
 3. **Run:** `streamlit run app.py`
 
@@ -55,7 +55,7 @@ It allows HR Managers to move from being "Stressed Administrators" to "Strategic
 
 **Step 1:** Run this command in your terminal:
 
-pip install streamlit google-generativeai python-dotenv
+pip install -r requirements.txt
 
 ---
 
