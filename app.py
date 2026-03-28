@@ -1,8 +1,10 @@
 import streamlit as st
 import datetime
+import brain
+import time
+from streamlit_confetti import confetti 
 
 # --- AUDIT FILE LOGIC ---
-# --- AUDIT FILE LOGIC (Rescue Edition) ---
 def log_audit_event(filename, result):
     try:
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -17,9 +19,6 @@ def log_audit_event(filename, result):
         st.session_state.log.append(f"Audit Logged: {filename}")
     except Exception as e:
         st.session_state.log.append(f"Audit Write Failed: {e}")
-import brain
-import time
-from streamlit_confetti import confetti 
 
 # --- 1. CLEAN THEME & SIDEBAR STYLE ---
 st.set_page_config(page_title="AI HR Agent", layout="wide")
@@ -52,18 +51,17 @@ with st.sidebar:
     
     # System Health "Side Work"
     st.subheader("🖥️ System Health")
-    st.success("Core: Gemini 2.5 Flash")
+    # UPDATED: Changed to Gemini 1.5 Robotics-ER
+    st.success("Core: Gemini 1.5 Robotics-ER") 
     st.info("Environment: Python 3.12")
     st.warning("API Quota: 85% Remaining")
     
     st.markdown("---")
     st.subheader("🛠️ Live Process Log")
-    # --- ADD THIS INSIDE THE SIDEBAR BLOCK ---
     st.divider()
     st.subheader("📁 Project Exports")
     
     try:
-        # This looks for the audit file created by your extraction
         with open("audit_log.txt", "rb") as file:
             st.download_button(
                 label="📥 Download Audit File",
@@ -73,13 +71,12 @@ with st.sidebar:
                 help="Download the history of AI extractions for the judges."
             )
     except FileNotFoundError:
-        # This shows if you haven't successfully extracted an ID yet
         st.info("Log file will be available after the first successful extraction.")
-    # This creates a "running" log look
+
     if 'log' not in st.session_state:
         st.session_state.log = ["System Initialized...", "Waiting for Document..."]
     
-    for entry in st.session_state.log[-5:]: # Shows last 5 actions
+    for entry in st.session_state.log[-5:]: 
         st.caption(f"• {entry}")
 
 # --- 3. MAIN INTERFACE ---
@@ -93,21 +90,21 @@ if 'victory_mode' not in st.session_state:
 # DOCUMENT UPLOAD
 st.header("1. Document Analysis")
 uploaded_file = st.file_uploader("Upload Employee Document", type=['png', 'jpg', 'jpeg'])
+
 if uploaded_file and not st.session_state.victory_mode:
     if st.button("🚀 Run Extraction Agent"):
-        with st.spinner("Agent calling Gemini 2.5 Flash..."):
+        # UPDATED: Changed spinner text to match your model
+        with st.spinner("Agent calling Gemini 1.5 Robotics-ER..."): 
            try:
                 raw_text = brain.get_summary(uploaded_file)
-                
-                # --- PASTE THIS NEW LINE HERE ---
                 log_audit_event(uploaded_file.name, raw_text)
                 
                 st.session_state.emp_data = {"Summary": raw_text, "Status": "Pending"}
                 st.success("Extraction Successful!")
            except Exception as e:
-                # These lines MUST be pushed in further than 'except'
                 st.error(f"⚠️ API Error: {e}")
                 st.session_state.log.append(f"Extraction Failed: {e}")
+
 # --- 4. RESULTS & EXECUTION ---
 if st.session_state.emp_data and not st.session_state.victory_mode:
     st.markdown("---")
@@ -133,33 +130,26 @@ if st.session_state.emp_data and not st.session_state.victory_mode:
                     st.session_state.log.append("Database Synced")
                     s.update(label="Workflow Complete!", state="complete")
                     
-                    # 🎉 CONGRATULATIONS FLYING PAPERS
                     confetti(emojis=["🎊", "📄"]) 
                     st.session_state.victory_mode = True
                     st.rerun()
 
 # --- 5. VICTORY SCREEN ---
-# --- SUCCESS CELEBRATION & RESET ---
 if st.session_state.victory_mode:
-    # 1. Trigger the visual celebration
     st.balloons() 
-    
-    # 2. Show the big success message
     st.success("🎉 CONGRATULATIONS! Employee Onboarding is officially complete!")
     
     if st.button("🔄 Start Next Onboarding"):
-        # Clear data for the next round
         st.session_state.emp_data = None
         st.session_state.victory_mode = False
-        
-        # Show the 60-second API cooldown warning
-        st.warning("⏳ System Resetting... Please wait 60 seconds before uploading the next ID to avoid API Quota limits.")
-        
-        # Small delay so they can read the warning
-        import time
+        st.warning("⏳ System Resetting... Please wait 60 seconds before next upload.")
         time.sleep(3) 
         st.rerun()
-        # Show the log at the bottom of the page
+
+# SYSTEM AUDIT CHECKBOX
 if st.checkbox("🔍 Show System Audit Log"):
-    with open("audit_log.txt", "r") as f:
-        st.text(f.read())
+    try:
+        with open("audit_log.txt", "r") as f:
+            st.text(f.read())
+    except FileNotFoundError:
+        st.write("No audit log found yet.")
