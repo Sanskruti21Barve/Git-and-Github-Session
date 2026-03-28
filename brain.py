@@ -8,8 +8,8 @@ load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Using the stable Gemini 1.5 Flash model
-URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
-
+# The specific endpoint for the Robotics preview model
+URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-robotics-er-1.5-preview:generateContent?key={API_KEY}"
 def get_summary(employee_data):
     # This turns the ID image into a format the AI can understand
     image_base64 = base64.b64encode(employee_data.getvalue()).decode("utf-8")
