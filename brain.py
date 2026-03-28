@@ -1,11 +1,14 @@
 import requests
 import base64
+import os
+from dotenv import load_dotenv
 
-# 1. Use your API key from Google AI Studio
-API_KEY = "AIzaSyA441Hpp1L43YCIBGy6f26RYTktOc4SvDI" 
+# Load the secret key from your .env file
+load_dotenv()
+API_KEY = os.getenv("GEMINI_API_KEY")
 
-# 2. UPDATED URL: Using gemini-2.5-flash (The stable current version)
-URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
+# Using the stable Gemini 1.5 Flash model
+URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={API_KEY}"
 
 def get_summary(employee_data):
     # This turns the ID image into a format the AI can understand
@@ -26,7 +29,6 @@ def get_summary(employee_data):
     response = requests.post(URL, json=payload)
     result = response.json()
     
-    # This will catch any errors and show them in your Streamlit app
     if 'error' in result:
         raise Exception(result['error']['message'])
         
