@@ -2,15 +2,21 @@ import streamlit as st
 import datetime
 
 # --- AUDIT FILE LOGIC ---
+# --- AUDIT FILE LOGIC (Rescue Edition) ---
 def log_audit_event(filename, result):
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # Clean up the result text to keep the log file neat
-    clean_result = result.replace("\n", " ")
-    log_entry = f"[{timestamp}] PROCESSED: {filename} | AI_EXTRACTED: {clean_result}\n"
-    
-    # This automatically creates 'audit_log.txt' in your folder
-    with open("audit_log.txt", "a") as f:
-        f.write(log_entry)
+    try:
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        clean_result = result.replace("\n", " ")
+        log_entry = f"[{timestamp}] PROCESSED: {filename} | AI_EXTRACTED: {clean_result}\n"
+        
+        # Change "a" to "w" to overwrite instead of adding more
+        with open("audit_log.txt", "w") as f:
+            f.write(log_entry)
+        
+        # Add to the live UI log too!
+        st.session_state.log.append(f"Audit Logged: {filename}")
+    except Exception as e:
+        st.session_state.log.append(f"Audit Write Failed: {e}")
 import brain
 import time
 from streamlit_confetti import confetti 
@@ -46,7 +52,7 @@ with st.sidebar:
     
     # System Health "Side Work"
     st.subheader("🖥️ System Health")
-    st.success("Core: Gemini 1.5 Flash")
+    st.success("Core: Gemini 2.5 Flash")
     st.info("Environment: Python 3.12")
     st.warning("API Quota: 85% Remaining")
     
@@ -89,7 +95,7 @@ st.header("1. Document Analysis")
 uploaded_file = st.file_uploader("Upload Employee Document", type=['png', 'jpg', 'jpeg'])
 if uploaded_file and not st.session_state.victory_mode:
     if st.button("🚀 Run Extraction Agent"):
-        with st.spinner("Agent calling Gemini 1.5 Flash..."):
+        with st.spinner("Agent calling Gemini 2.5 Flash..."):
            try:
                 raw_text = brain.get_summary(uploaded_file)
                 

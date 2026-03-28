@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Private keys and secrets
 .env
 
@@ -9,3 +10,14 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+=======
+# Sensitive API Keys
+.env
+
+# Python cache folders
+__pycache__/
+*.pyc
+
+# Personal logs
+audit_log.txt
+>>>>>>> 7d94337 (Final: AI HR Agent with Gemini 2.5 Flash and secure .env)
