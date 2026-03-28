@@ -1,0 +1,11 @@
+# Private keys and secrets
+.env
+
+# Python junk (temporary files)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
+Thumbs.db
