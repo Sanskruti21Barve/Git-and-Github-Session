@@ -53,6 +53,8 @@ It allows HR Managers to move from being "Stressed Administrators" to "Strategic
 1. **Install:** `pip install -r requirements.txt`
 2. **Setup:** Add your API Key to the `.env` file.
 3. **Run:** `streamlit run app.py`
+           **OR**
+   `python -m streamlit run app.py`
 
 ---
 ## 1️⃣ Install Dependencies
@@ -76,6 +78,8 @@ GEMINI_API_KEY=your_actual_api_key_here
 **Step 3:** Start the dashboard with this command:
 
 streamlit run app.py
+     **OR**
+python -m streamlit run app.py
 
 ---
 
